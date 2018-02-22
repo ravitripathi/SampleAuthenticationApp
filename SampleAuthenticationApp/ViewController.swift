@@ -8,28 +8,40 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        currentViewController = firstChildTabVC
+class ViewController: UIViewController, signUpComplete {
+   
+    //MARK: Implementaing go back mechanism after sign up
+    func goBack() {
         displayCurrentTab(0)
     }
     
+    //MARK: Initializing View Controllers
     
-    //MARK: - Handling Content View changes
     var currentViewController: UIViewController?
     
     lazy var firstChildTabVC: UIViewController? = {
         let firstChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "login")
         return firstChildTabVC
     }()
-    
-    lazy var secondChildTabVC : UIViewController? = {
-        let secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "signup")
+
+    lazy var secondChildTabVC : SignupViewController? = {
+        let secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "signup") as! SignupViewController
         return secondChildTabVC
     }()
+    
+    
+    //MARK: - Lifecycle Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        currentViewController = firstChildTabVC
+        displayCurrentTab(0)
+        secondChildTabVC?.delegate = self
+    }
+    
+    
+    //MARK: - Handling Content View changes
+    
     
     @IBOutlet weak var contentView: UIView!
     @IBAction func showComponent(_ sender: UISegmentedControl) {

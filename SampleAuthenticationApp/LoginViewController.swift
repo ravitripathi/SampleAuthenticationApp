@@ -40,17 +40,20 @@ class LoginViewController: UIViewController {
     
     //Check credentials
     func checkLogin(username: String, password: String) -> Bool {
-        guard username == UserDefaults.standard.value(forKey: "username") as? String else {
-            return false
-        }
+//        guard username == UserDefaults.standard.value(forKey: "username") as? String else {
+//            print("No user")
+//            return false
+//        }
         do {
             let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
                                                     account: username,
                                                     accessGroup: KeychainConfiguration.accessGroup)
             let keychainPassword = try passwordItem.readPassword()
+            print(keychainPassword+":"+username)
             return password == keychainPassword
         } catch {
-            fatalError("Error reading password from keychain - \(error)")
+            print("Cant read:")
+            return false
         }
     }
     
@@ -59,7 +62,7 @@ class LoginViewController: UIViewController {
         let alertView = UIAlertController(title: "Login Problem",
                                           message: "Wrong username or password.",
                                           preferredStyle:. alert)
-        let okAction = UIAlertAction(title: "Foiled Again!", style: .default)
+        let okAction = UIAlertAction(title: "Ok!", style: .default)
         alertView.addAction(okAction)
         present(alertView, animated: true)
     }
