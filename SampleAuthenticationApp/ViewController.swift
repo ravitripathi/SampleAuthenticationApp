@@ -9,17 +9,51 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        currentViewController = firstChildTabVC
+        displayCurrentTab(0)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    //MARK: - Handling Content View changes
+    var currentViewController: UIViewController?
+    
+    lazy var firstChildTabVC: UIViewController? = {
+        let firstChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "login")
+        return firstChildTabVC
+    }()
+    
+    lazy var secondChildTabVC : UIViewController? = {
+        let secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "signup")
+        return secondChildTabVC
+    }()
+    
+    @IBOutlet weak var contentView: UIView!
+    @IBAction func showComponent(_ sender: UISegmentedControl) {
+        self.currentViewController!.view.removeFromSuperview()
+        self.currentViewController!.removeFromParentViewController()
+        displayCurrentTab(sender.selectedSegmentIndex)
     }
-
-
+    
+    func displayCurrentTab(_ tabIndex: Int){
+        var vc: UIViewController?
+        switch tabIndex {
+        case 0:
+            vc  = firstChildTabVC
+        case 1:
+            vc = secondChildTabVC
+        default:
+            vc = firstChildTabVC
+        }
+        self.addChildViewController(vc!)
+        vc!.didMove(toParentViewController: self)
+        vc!.view.frame = self.contentView.bounds
+        self.contentView.addSubview(vc!.view)
+        self.currentViewController = vc
+    }
+    
 }
 
