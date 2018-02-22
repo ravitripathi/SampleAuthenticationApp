@@ -199,7 +199,7 @@
         <scene sceneID="JeV-AE-UWp">
             <objects>
                 <viewController id="syt-OY-ibm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Hk-w0-PVd">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="3Hk-w0-PVd">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -210,11 +210,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="j8z-I7-okq" firstAttribute="centerY" secondItem="3Hk-w0-PVd" secondAttribute="centerY" id="Jq4-nA-He3"/>
                             <constraint firstItem="j8z-I7-okq" firstAttribute="centerX" secondItem="3Hk-w0-PVd" secondAttribute="centerX" id="PEE-as-aa9"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="w9r-zg-mw7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TD-Zd-DFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
