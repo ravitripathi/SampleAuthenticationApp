@@ -15,6 +15,7 @@
 		41562884203EB91100620D72 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41562883203EB91100620D72 /* KeychainPasswordItem.swift */; };
 		41562886203EBD7A00620D72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41562885203EBD7A00620D72 /* LoginViewController.swift */; };
 		41562888203EBD8E00620D72 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41562887203EBD8E00620D72 /* SignupViewController.swift */; };
+		4156288A203ED99800620D72 /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41562889203ED99800620D72 /* BiometricAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		41562883203EB91100620D72 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		41562885203EBD7A00620D72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		41562887203EBD8E00620D72 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		41562889203ED99800620D72 /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				41562883203EB91100620D72 /* KeychainPasswordItem.swift */,
 				4156287A203EB12000620D72 /* LaunchScreen.storyboard */,
 				4156287D203EB12000620D72 /* Info.plist */,
+				41562889203ED99800620D72 /* BiometricAuth.swift */,
 			);
 			path = SampleAuthenticationApp;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				41562886203EBD7A00620D72 /* LoginViewController.swift in Sources */,
 				41562874203EB12000620D72 /* ViewController.swift in Sources */,
+				4156288A203ED99800620D72 /* BiometricAuth.swift in Sources */,
 				41562888203EBD8E00620D72 /* SignupViewController.swift in Sources */,
 				41562872203EB12000620D72 /* AppDelegate.swift in Sources */,
 				41562884203EB91100620D72 /* KeychainPasswordItem.swift in Sources */,

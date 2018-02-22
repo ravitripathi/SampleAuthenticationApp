@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
+    
+    let touchMe = BiometricAuth()
     
     // Keychain Configuration
     struct KeychainConfiguration {
@@ -19,6 +22,23 @@ class LoginViewController: UIViewController {
     // Used apple's keychain code
     var passwordItems: [KeychainPasswordItem] = []
      
+    @IBAction func touchID(_ sender: UIButton) {
+        touchMe.authenticateUser() { [weak self] message in
+            // 2
+            if let message = message {
+                // if the completion is not nil show an alert
+                let alertView = UIAlertController(title: "Error",
+                                                  message: message,
+                                                  preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Darn!", style: .default)
+                alertView.addAction(okAction)
+                self?.present(alertView, animated: true)
+            } else {
+                // 3
+                self?.performSegue(withIdentifier: "dismissLogin", sender: self)
+            }
+        }
+    }
     //Fields
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -78,4 +98,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    
+    
 }

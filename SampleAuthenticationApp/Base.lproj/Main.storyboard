@@ -125,8 +125,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gWy-iY-MbR">
-                                <rect key="frame" x="9" y="17.5" width="172.5" height="155.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="gWy-iY-MbR">
+                                <rect key="frame" x="9" y="11" width="172.5" height="168.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Existing User Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-fD-6DA">
                                         <rect key="frame" x="13" y="0.0" width="146.5" height="20.5"/>
@@ -135,23 +135,30 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7aR-Yr-qkc">
-                                        <rect key="frame" x="30" y="35.5" width="112.5" height="30"/>
+                                        <rect key="frame" x="30" y="27.5" width="112.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Imb-jF-6d5">
-                                        <rect key="frame" x="30" y="80.5" width="112.5" height="30"/>
+                                        <rect key="frame" x="30" y="64.5" width="112.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO9-ad-5l9">
-                                        <rect key="frame" x="67.5" y="125.5" width="38" height="30"/>
+                                        <rect key="frame" x="67.5" y="101.5" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="authenticate:" destination="6D3-3T-Sxx" eventType="touchUpInside" id="BIq-OW-Giu"/>
                                             <action selector="authenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guv-0H-ra7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKj-ET-LQy">
+                                        <rect key="frame" x="58" y="138.5" width="57" height="30"/>
+                                        <state key="normal" title="TouchID"/>
+                                        <connections>
+                                            <action selector="touchID:" destination="6D3-3T-Sxx" eventType="touchUpInside" id="R7K-pF-Z9g"/>
                                         </connections>
                                     </button>
                                 </subviews>
